@@ -108,7 +108,7 @@ void loop() {
   }
 
   if (leitura > 850) {
-  /* quando a umidade for menor que 300 , retorna umidade baixa
+  /* quando a umidade for m queaior 850 , retorna umidade baixa
   e então o buzzer aciona e o relé é ativado, ligado */
   digitalWrite(PIN_RELE, HIGH);
   digitalWrite(PIN_BUZZER, HIGH);
@@ -116,15 +116,15 @@ void loop() {
   mostrarMensagem("umidade", "baixa", horaStr, dataStr);
 }
 else if (leitura >= 351 && leitura <= 850) {
-  /* quando a umidade for maior ou igual a 300 e menor ou
-   igual a 500 , retorna umidade normal e led,buzzer e relé não acionam*/
+  /* quando a umidade for maior ou igual a 351 e menor ou
+   igual a 850 , retorna umidade normal e led,buzzer e relé não acionam*/
   digitalWrite(PIN_RELE, LOW);
   digitalWrite(PIN_BUZZER, LOW);
   digitalWrite(PIN_LED_VERDE, LOW);
   mostrarMensagem("umidade", "normal", horaStr, dataStr);
 }
 else {
-  /* quando a umidade for maior que 500, retorna umidade alta
+  /* quando a umidade for maior que 850, retorna umidade alta
   e aciona a led */
   digitalWrite(PIN_RELE, LOW);
   digitalWrite(PIN_BUZZER, LOW);
